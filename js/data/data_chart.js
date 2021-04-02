@@ -1,4 +1,4 @@
-export const dataChart=[
+ export const dataChart=[
     {
         "ticker": "6753.T",
         "spot_date": "26-03-2020",
@@ -3904,3 +3904,4 @@ export const dataChart=[
         "adj_price": 1870
     }
 ]
+ 

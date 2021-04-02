@@ -3,7 +3,7 @@ import {Text, View, FlatList} from 'react-native';
 import CardLeague from './common/CardLeague';
 import {myLeagueData} from '../data/my_league';
 import styles from '../styles/league';
-
+myLeagueData.sort((a, b) => b.pnl - a.pnl);
 let displayLeage = [];
 for (let i = 0; i < 4; i++) {
   if (i < 3) {
@@ -21,7 +21,9 @@ for (let i = 0; i < 4; i++) {
 }
 
 const League = props => {
-  const renderLeague = ({item}) => <CardLeague league={item} />;
+  const renderLeague = ({item, index}) => (
+    <CardLeague key={index} league={item} />
+  );
 
   return (
     <View style={styles.container}>

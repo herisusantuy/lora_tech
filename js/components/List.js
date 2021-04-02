@@ -5,7 +5,7 @@ import styles from '../styles/list';
 
 const types = ['3 Month', '1 Month', '2 Week', '1 Week'];
 const List = props => {
-  const renderList = ({item}) => <CardList type={item} />;
+  const renderList = ({item, index}) => <CardList key={index} type={item} />;
 
   return (
     <View style={styles.container}>
@@ -13,7 +13,7 @@ const List = props => {
       <FlatList
         data={types}
         renderItem={renderList}
-        keyExtractor={item => item.number}
+        keyExtractor={(item,index) => index}
         horizontal
       />
     </View>
