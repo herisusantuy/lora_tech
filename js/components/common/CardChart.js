@@ -6,6 +6,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {dataChart} from '../../data/data_chart';
 import Chart from '../common/Chart';
 import {generateData, getDataBasedOnRange} from '../../util/generate';
+import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
 
 const {width} = Dimensions.get('window');
 const CardChart = props => {
@@ -58,7 +59,14 @@ const CardChart = props => {
   return (
     <View style={styles.container}>
       <View style={styles.chartContainer}>
-        <Chart displayData={displayData} />
+        <ReactNativeZoomableView
+          maxZoom={1.5}
+          minZoom={0.5}
+          zoomStep={0.5}
+          initialZoom={1}
+          bindToBorders={true}>
+          <Chart displayData={displayData} />
+        </ReactNativeZoomableView>
       </View>
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <FlatList

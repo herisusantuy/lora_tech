@@ -1,10 +1,10 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs'; 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'; 
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import {color} from '../styles/default';
-import Home from './Home'
+import Home from './Home';
 
 // Navigation Setting
 const Tab = createMaterialBottomTabNavigator();
@@ -12,6 +12,7 @@ const HomeStack = createStackNavigator();
 
 const HomeStackScreen = ({navigation}) => (
   <HomeStack.Navigator
+    headerMode="none"
     screenOptions={{
       headerStyle: {
         backgroundColor: color.darkBlue,
@@ -19,17 +20,9 @@ const HomeStackScreen = ({navigation}) => (
       headerTintColor: color.white,
       fontWeight: 'bold',
     }}>
-    <HomeStack.Screen
-      name="Home"
-      component={Home}
-      options={{
-        title: 'LORA Tech', 
-      }}
-    />
+    <HomeStack.Screen name="Home" component={Home} />
   </HomeStack.Navigator>
 );
-
-
 
 const MainTab = () => (
   <Tab.Navigator
@@ -50,7 +43,7 @@ const MainTab = () => (
           <MaterialIcons name="home-filled" color={color} size={25} />
         ),
       }}
-    /> 
+    />
   </Tab.Navigator>
 );
 

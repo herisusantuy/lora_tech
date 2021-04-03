@@ -30,10 +30,8 @@ const Chart = props => (
       style={{
         data: {stroke: color.blue},
         parent: {border: '1px solid #ccc'},
-        // height: props.style && props.style.height ? props.style.height : 500,
-        // width: props.style && props.style.width ? props.style.width : width,
-        height: 100,
-        width: 200,
+        height: props.style && props.style.height ? props.style.height : 500,
+        width: props.style && props.style.width ? props.style.width : width,
       }}
       data={props.displayData}
     />

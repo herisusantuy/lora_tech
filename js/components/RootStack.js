@@ -9,7 +9,7 @@ import MainTab from './MainTab';
 const RootStack = createStackNavigator();
 
 const RootStackScreen = ({navigation}) => (
-  <RootStack.Navigator headerMode="none" initialRouteName="MainTab">
+  <RootStack.Navigator headerMode="none" initialRouteName="Login">
     <RootStack.Screen name="Login" component={Login} />
     <RootStack.Screen name="MainTab" component={MainTab} />
   </RootStack.Navigator>
