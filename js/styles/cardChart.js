@@ -6,7 +6,24 @@ const {width, height} = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     backgroundColor: color.white,
-    paddingVertical: moderateScale(15),
+  },
+  title: {
+    fontSize: moderateScale(24),
+    fontWeight: 'bold',
+    padding: moderateScale(10),
+  },
+  btnContainer: {
+    backgroundColor: color.white,
+    flexDirection: 'row',
+    width: 50,
+    justifyContent: 'center',
+    padding: moderateScale(10),
+    borderBottomWidth: 1,
+    borderBottomColor: color.blue,
+    marginHorizontal: moderateScale(5),
+    fontWeight: 'bold',
+  },
+  chartContainer: {
     height: 200,
     width: width,
     justifyContent: 'center',

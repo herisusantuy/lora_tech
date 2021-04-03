@@ -11,6 +11,8 @@ const Login = props => {
   const handleLogin = () => {
     if (username == 'admin' && password == 'admin') {
       props.navigation.navigate('MainTab');
+      setUsername(null);
+      setPassword(null);
     } else {
       setErrMsg('Oops.Username or Password is not correct!');
     }
@@ -28,7 +30,7 @@ const Login = props => {
             setUsername(username);
             setErrMsg(null);
           }}
-          placeholder="Username"
+          placeholder="Username:admin"
         />
         <TextInput
           style={styles.input}
@@ -37,7 +39,7 @@ const Login = props => {
             setPassword(password);
             setErrMsg(null);
           }}
-          placeholder="Password"
+          placeholder="Password:admin"
           secureTextEntry={true}
         />
       </View>

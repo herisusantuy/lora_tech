@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   midContainer: {
-    flex: 4,
+    flex: 5,
   },
   rightContainer: {
-    flex: 3,
+    flex: 2,
     alignItems: 'flex-end',
   },
   title: {

@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {Text, View, Image} from 'react-native';
 import styles from '../../styles/cardWatch';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import {color} from '../../styles/default';
+import Chart from './Chart';
+import {generateData, getDataBasedOnRange} from '../../util/generate';
 
 const CardWatch = props => {
+  const [displayData, setDisplayData] = useState(getDataBasedOnRange(90));
   let pnlValue =
     props.item.potential_max_loss > 0
       ? `+${props.item.potential_max_loss.toFixed(2)}%`
@@ -15,7 +17,9 @@ const CardWatch = props => {
         <Text style={styles.title}>{props.item.bot_type}</Text>
         <Text style={styles.company}>Company {props.item.bot_type}</Text>
       </View>
-      <View style={styles.midContainer}></View>
+      <View style={[styles.midContainer]}>
+        {/* <Chart displayData={displayData} style={{height: 50, width: 100}} /> */}
+      </View>
       <View style={styles.rightContainer}>
         <Text
           style={[
